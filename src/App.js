@@ -23,14 +23,11 @@ function App() {
 
   const genRandomNumber = () => {
     let index = Math.floor(Math.random() * quotes.length);
-    x++;
+    x = (x + 1) % colorArray.length;
     setAccentColor(colorArray[x]);
     setQuote(quotes[index].quote);
     setAuthor(quotes[index].author);
-    if(x == colorArray.length) {
-      x = 0;
-    }
-  }
+  };
 
   var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
